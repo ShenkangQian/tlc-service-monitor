@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+data/
+results/
+*.parquet
+*.log
