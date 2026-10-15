@@ -1,5 +1,7 @@
 # From trip records to a review decision
 
+[Project overview](../README.md) · [Recorded analysis](../README.md#recorded-analysis) · [Reproduction commands](../README.md#reproduce)
+
 The monitor connects three different objects: an event rate, a ranking, and a later observation of that ranking. Keeping their definitions separate is essential. A precise rate estimate need not identify the best use of a limited review budget, and a persistent service interval does not establish what caused it.
 
 ## Define the observation before choosing the model
