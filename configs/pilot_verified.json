@@ -1,0 +1,8 @@
+{
+  "label": "real_four_complete_months_verified",
+  "start_month": "2024-01", "end_month": "2024-04",
+  "monitor_month": "2024-04", "data_dir": "data/pilot", "output_dir": "results/pilot_verified",
+  "sample_row_groups": null, "max_wait_seconds": 7200, "batch_size": 131072,
+  "reference_months": 3, "prior_strength": 50, "min_n": 100, "min_n_ref": 300,
+  "min_days": 3, "min_ref_days": 6, "bootstrap_reps": 300, "seed": 42, "top_k": 20
+}

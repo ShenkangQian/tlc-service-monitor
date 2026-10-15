@@ -1,0 +1,8 @@
+{
+  "label": "real_full_83_months",
+  "start_month": "2019-02", "end_month": "2025-12",
+  "monitor_month": "2025-11", "data_dir": "data/full", "output_dir": "results/full",
+  "sample_row_groups": null, "max_wait_seconds": 7200, "batch_size": 131072,
+  "reference_months": 3, "prior_strength": 50, "min_n": 100, "min_n_ref": 300,
+  "min_days": 3, "min_ref_days": 6, "bootstrap_reps": 300, "seed": 42, "top_k": 20
+}

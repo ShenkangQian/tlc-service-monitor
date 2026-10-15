@@ -1,0 +1,8 @@
+{
+  "label": "real_deterministic_row_group_sample",
+  "start_month": "2024-01", "end_month": "2024-06",
+  "monitor_month": "2024-05", "data_dir": "data/sample", "output_dir": "results/sample",
+  "sample_row_groups": 1, "max_wait_seconds": 7200, "batch_size": 131072,
+  "reference_months": 3, "prior_strength": 50, "min_n": 100, "min_n_ref": 300,
+  "min_days": 3, "min_ref_days": 6, "bootstrap_reps": 300, "seed": 42, "top_k": 20
+}
