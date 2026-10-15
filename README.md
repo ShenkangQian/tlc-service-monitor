@@ -8,6 +8,8 @@ The recorded January–April 2024 run scanned **80,036,904** source rows and ret
 
 ![April monitoring diagnostics](examples/pilot_verified/risk_diagnostics.png)
 
+The left panel shows all supported cells; the right shows the twelve largest shrunk changes before the priority filter. Intervals crossing zero therefore appear in this descriptive plot. Labels identify zone (`Z`), platform, four-hour slot (`S`, starting at midnight), and weekday (`D`, Monday = 0). [Open the full-size figure](examples/pilot_verified/risk_diagnostics.png) or inspect the [filtered review queue](examples/pilot_verified/review_queue.csv).
+
 ## Statistical question
 
 For each completed trip, the event is a request-to-pickup interval **strictly longer than 600 seconds**. The recorded configuration retains intervals up to 7,200 seconds and applies validity and month-boundary filters. The quantity being monitored is therefore the event rate among eligible completed trips.
@@ -78,6 +80,8 @@ Random streams are derived from the seed and cell key. Adding an unrelated cell 
 
 ## Reproduce
 
+Use Python 3.12 or later; the pinned dependencies were checked with Python 3.13. Run these commands from the repository root. Confirm that `python3 --version` meets this requirement before creating the environment.
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -96,7 +100,7 @@ python -m tlc_service run --config configs/pilot_verified.json
 python -m tlc_service analyze --config configs/pilot_verified.json
 ```
 
-The source check inspects metadata. `run` scans and aggregates the configured months; `analyze` reuses the daily panels. The [forward-check configuration](configs/pilot_forwardcheck.json) selects the earlier monitoring window. The full-history configuration is a separate execution specification. Source access depends on the publisher's availability.
+The source check inspects metadata. `run` scans and aggregates the configured months; `analyze` reuses the daily panels. The [forward-check configuration](configs/pilot_forwardcheck.json) selects the earlier monitoring window. After the four-month run, execute `python -m tlc_service analyze --config configs/pilot_forwardcheck.json` to reuse those panels for the March-to-April check. Its [diagnostic figure](examples/pilot_forwardcheck/risk_diagnostics.png) and [review queue](examples/pilot_forwardcheck/review_queue.csv) are included for inspection. The [full-history configuration](configs/full.json) is a separate execution specification. Source access depends on the publisher's availability.
 
 ## Data handling
 
